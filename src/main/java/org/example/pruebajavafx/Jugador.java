@@ -3,10 +3,12 @@ package org.example.pruebajavafx;
 public class Jugador {
     private String nombre;
     private int puntos;
+    private int rondasGanadas;
 
     public Jugador(String nombre){
         this.nombre = nombre;
         this.puntos = 0;
+        this.rondasGanadas = 0;
     }
 
     public String getNombre(){ return nombre; }
@@ -17,4 +19,7 @@ public class Jugador {
 
     public void setPuntos(int puntos){ this.puntos = puntos; }
 
+    public void incrementarRondasGanadas(){ rondasGanadas++; }
+
+    public int getRondasGanadas(){ return rondasGanadas; }
 }

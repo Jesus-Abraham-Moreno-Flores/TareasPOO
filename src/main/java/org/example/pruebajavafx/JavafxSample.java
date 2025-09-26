@@ -11,10 +11,11 @@ import java.io.IOException;
 
 public class JavafxSample extends Application {
 
-    Jugador j1 = new Jugador("David");
-    Jugador j2 = new Jugador("Artemio");
-    Jugador j3 = new Jugador("Pimi");
-    Jugador j4 = new Jugador("Goku");
+    Jugador j1 = new Jugador("Artorias");
+    Jugador j2 = new Jugador("Abraham");
+    Jugador j3 = new Jugador("Goku");
+    Jugador j4 = new Jugador("Hola");
+
     private Juego3Dados juego;
     private String respuesta;
 
@@ -30,16 +31,14 @@ public class JavafxSample extends Application {
         stage.show();
 
         System.out.println("Juego de los 3 dados\n Reglas del juego: El ganador será quien gane 2 rondas de un total de 3");
-        System.out.println("Para ganar cada ronda debes de juntar la mayor cantidad de puntos posibles");
+        System.out.println("Para ganar cada ronda debes de juntar la más puntos que los demás");
 
     }
 
     private BorderPane crearTablero() {
-        Juego3Dados juego3Dados = new Juego3Dados();
-        return new Tablero(j1, j2, j3, j4, juego3Dados);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
+        ManejadorJuego manejador=new ManejadorJuego(3);
+        Tablero tablero = new Tablero(manejador);
+        ControlJuego3Dados controlador = new ControlJuego3Dados(tablero, manejador);
+        return tablero;
     }
 }

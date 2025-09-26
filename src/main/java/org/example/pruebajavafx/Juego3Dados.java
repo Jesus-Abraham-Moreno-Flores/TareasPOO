@@ -39,5 +39,7 @@ public class Juego3Dados {
     public int getValorDado3(){
         return d3.getValor();
     }
-
+    public String misDados(){
+     return d1.toString() + " " + d2.toString() + " " + d3.toString();
+    }
 }

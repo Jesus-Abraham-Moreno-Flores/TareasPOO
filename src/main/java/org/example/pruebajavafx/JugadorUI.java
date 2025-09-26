@@ -17,15 +17,25 @@ public class JugadorUI extends VBox {
         puntosLabel.setText(jugador.getPuntos() + "");
 
         this.setSpacing(5);
-        this.setStyle("-fx-alignment: center; -fx-padding: 10; -fx-border-color: lightgray; -fx-border-width: 1; " +
-                "-fx-background-color: white;");
+        this.setStyle("-fx-alignment: center; -fx-padding: 10; -fx-border-color: #f3f3f3; -fx-border-width: 1; " +
+                "-fx-background-color: #ababaf;");
 
 
-        nombreLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
-        puntosLabel.setStyle("-fx-font-size: 24px; -fx-text-fill: #333");
+        nombreLabel.setStyle("-fx-font-size: 24px; -fx-text-fill: #ffffff");
+        puntosLabel.setStyle("-fx-font-size: 24px; -fx-text-fill: #fffbfb");
 
         this.getChildren().addAll(nombreLabel, puntosLabel);
     }
+
+    public void updatePuntos(int puntos){
+        puntosLabel.setText(puntos+"");
+    }
+
+
+    public Jugador getJugador(){
+        return jugador;
+    }
+
     public void addPuntos(int puntos){
         int suma = jugador.getPuntos() + puntos;
         jugador.setPuntos(suma);

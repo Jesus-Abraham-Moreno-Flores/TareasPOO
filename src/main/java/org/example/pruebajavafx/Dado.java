@@ -4,24 +4,18 @@ import java.util.Random;
 
 public class Dado {
 
-    private int valor;         // Valor actual del dado
-    private final Random rnd;  // Generador de números aleatorios
+    private int valor;         // Valor que posee el dado
+    private final Random rnd;  // Randomizer para generar números aleatorios
 
     public Dado() {
         rnd = new Random();
-        lanzar(); // Inicializamos el dado con un valor aleatorio
+        lanzar(); //
     }
 
-    /**
-     * Lanza el dado (genera un valor entre 1 y 6).
-     */
     public void lanzar() {
-        valor = rnd.nextInt(6) + 1; // de 1 a 6
-    }
+        valor = rnd.nextInt(6) + 1;
+    } //Lanzamos el dado que posee valor del 1 al 6
 
-    /**
-     * Devuelve el valor actual del dado.
-     */
     public int getValor() {
         return valor;
     }
